@@ -1,0 +1,11 @@
+#ifndef SQUARE_H
+#define SQUARE_H
+
+#include "quadrilateral.h"
+
+class Square : public Quadrilateral {
+public:
+    Square(double a);
+};
+
+#endif // SQUARE_H
