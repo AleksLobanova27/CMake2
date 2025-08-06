@@ -4,7 +4,8 @@ project(Project)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(figures
+set(SOURCES
+    project.cpp
     figure.cpp
     triangle.cpp
     right_triangle.cpp
@@ -15,11 +16,17 @@ add_executable(figures
     square.cpp
     parallelogram.cpp
     rhombus.cpp
-    project.cpp
 )
-
-target_include_directories(figures PRIVATE include)
-
-if(WIN32)
-    set_target_properties(figures PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:CONSOLE")
-endif()
+set(HEADERS
+    figure.h
+    triangle.h
+    right_triangle.h
+    isosceles_triangle.h
+    equilateral_triangle.h
+    quadrilateral.h
+    rectangle.h
+    square.h
+    parallelogram.h
+    rhombus.h
+)
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
